@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="travel-agency-servlet:ear">
+    <output-path>$PROJECT_DIR$/out/artifacts/travel_agency_servlet_ear</output-path>
+    <root id="archive" name="travel-agency-servlet_ear.ear">
+      <element id="artifact" artifact-name="travel-agency-servlet:ear exploded" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="javax.servlet.jstl" />
+      </element>
+    </root>
+  </artifact>
+</component>
