@@ -43,8 +43,12 @@
                     <td colspan="2">
                         <div class="locale">
                             <p style="font-weight: bold">
-                                <a style="color: rgba(0,26,7,0.58);">${en}</a>
-                                <a style="color: rgba(0,26,7,0.58);">${ua}</a>
+                                <a style="color: rgba(0,26,7,0.58);">${en}
+                                    <img src="resources/images/united_kingdom_icon_127821.png" alt="logo" style="height: 15px">
+                                </a>
+                                <a style="color: rgba(0,26,7,0.58);">${ua}
+                                    <img src="resources/images/ukraine_icon_127856.png" alt="logo" style="height: 15px">
+                                </a>
                             </p>
                             <p align="center" style="font-weight: bold; font-size: 16px; font-family: Verdana, serif">
                                 <a class="button" style="color: rgba(0,26,7,0.58);">${viewAllVaucher}</a>
@@ -74,10 +78,13 @@
             <table width=800px border="1"  style="border: 5px ridge rgba(10,112,27,0.24)">
                 <tr>
                     <td>
-                        <p style="position: center; color: rgba(0,26,7,0.58); font-weight: bold;
-                        font-size: 18px; margin: 10px">${loginMessage}</p>
-                        <img src="${pageContext.request.contextPath}/resources/images/1177568.png"
-                             alt = "logotype" style="height: 20px; position: absolute; right: 550px; top: 35px">
+                        <p align="center" style="color: rgba(0,26,7,0.58); font-weight: bold;
+                        font-size: 18px; margin: 10px">
+                            <a class="button" style="color: rgba(0,26,7,0.58);">${loginMessage}
+                                <img src="${pageContext.request.contextPath}/resources/images/1177568.png"
+                                     alt = "logotype" style="height: 20px;">
+                            </a>
+                        </p>
                     </td>
                 </tr>
             </table>

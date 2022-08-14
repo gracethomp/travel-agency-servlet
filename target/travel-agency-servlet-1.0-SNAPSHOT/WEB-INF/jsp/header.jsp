@@ -27,14 +27,9 @@
             <h3>${welcom}</h3>
         </div>
         <div>
-            <p style="position: absolute; right: 400px; top: 35px; color: white">ЛИЧНЫЙ КАБИНЕТ</p>
-            <img src="${pageContext.request.contextPath}/resources/images/1177568.png"
-            alt = "logotype" style="height: 20px; position: absolute; right: 550px; top: 35px">
-        </div>
-        <div>
             <ul id="contact-info" class="contact-info">
                 <li>${contact}</li>
-                <li>&#9990; +380 63 351 12 20</li>
+                <li>+380 63 351 12 20</li>
             </ul>
         </div>
     </div>
