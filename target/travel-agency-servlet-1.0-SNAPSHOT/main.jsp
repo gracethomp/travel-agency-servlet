@@ -43,10 +43,13 @@
                     <td colspan="2">
                         <div class="locale">
                             <p style="font-weight: bold">
-                                <a style="color: rgba(0,26,7,0.58);">${en}
-                                    <img src="resources/images/united_kingdom_icon_127821.png" alt="logo" style="height: 15px">
+                                <a href="Controller?command=change_locale&localization=en"
+                                style="color: rgba(0,26,7,0.58);">${en}
+                                    <img src="resources/images/united_kingdom_icon_127821.png"
+                                         alt="logo" style="height: 15px">
                                 </a>
-                                <a style="color: rgba(0,26,7,0.58);">${ua}
+                                <a href="Controller?command=change_locale&localization=ua"
+                                   style="color: rgba(0,26,7,0.58);">${ua}
                                     <img src="resources/images/ukraine_icon_127856.png" alt="logo" style="height: 15px">
                                 </a>
                             </p>
@@ -59,15 +62,15 @@
                 <tr>
                     <td colspan="2">
                         <p align="center" style="color: rgba(0,26,7,0.58); font-size: 16px; font-style: normal">
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${Greece}</a><a> * </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${Poland}</a><a> * </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${Spain}</a><a> * </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${Montenegro}</a><a> * </a>
+                            <a class="button" style="color: rgba(0,26,7,0.58);">${Greece}</a><a> | </a>
+                            <a class="button" style="color: rgba(0,26,7,0.58);">${Poland}</a><a> | </a>
+                            <a class="button" style="color: rgba(0,26,7,0.58);">${Spain}</a><a> | </a>
+                            <a class="button" style="color: rgba(0,26,7,0.58);">${Montenegro}</a><a> | </a>
                             <a class="button" style="color: rgba(0,26,7,0.58);">${Bulgaria}</a>
                         </p>
                         <p align="center" style="color: rgba(0,26,7,0.58); font-style: normal">
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${shopping}</a><a> * </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${excursion}</a><a> * </a>
+                            <a class="button" style="color: rgba(0,26,7,0.58);">${shopping}</a><a> | </a>
+                            <a class="button" style="color: rgba(0,26,7,0.58);">${excursion}</a><a> | </a>
                             <a class="button" style="color: rgba(0,26,7,0.58);">${vacantion}</a>
                         </p>
                     </td>
