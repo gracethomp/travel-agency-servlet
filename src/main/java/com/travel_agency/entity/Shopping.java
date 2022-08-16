@@ -1,5 +1,6 @@
 package com.travel_agency.entity;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Shopping extends Tour {
@@ -8,8 +9,10 @@ public class Shopping extends Tour {
     public Shopping() {
     }
 
-    public Shopping(int id, TourType type, double price, boolean isHot, String shops){
-        super(id, type, price, isHot);
+    public Shopping(int id, TourType type, double price, boolean isHot, String shops,
+                    City city, LocalDate dateFrom, LocalDate dateTo,
+                    Tour tour, TransportType transportType, int amountPerson){
+        super(id, type, price, isHot, city, dateFrom, dateTo, tour, transportType, amountPerson);
         this.shops = shops;
     }
 

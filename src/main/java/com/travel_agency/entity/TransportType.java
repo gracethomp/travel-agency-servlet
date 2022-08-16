@@ -1,19 +1,17 @@
 package com.travel_agency.entity;
 
 public enum TransportType {
-    PLAIN(1), TRAIN(2), BUS(3);
+    PLAIN("plain"),
+    TRAIN("train"),
+    BUS("bus");
 
-    private int id;
+    private String name;
 
-    TransportType(int id) {
-        this.id = id;
+    TransportType(String name) {
+        this.name = name;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public String getName() {
+        return name;
     }
 }

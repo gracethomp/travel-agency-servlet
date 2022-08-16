@@ -54,7 +54,8 @@
                                 </a>
                             </p>
                             <p align="center" style="font-weight: bold; font-size: 16px; font-family: Verdana, serif">
-                                <a class="button" style="color: rgba(0,26,7,0.58);">${viewAllVaucher}</a>
+                                <a href="Controller?command=view_all_vauchers" class="button"
+                                   style="color: rgba(0,26,7,0.58);">${viewAllVaucher}</a>
                             </p>
                         </div>
                     </td>
