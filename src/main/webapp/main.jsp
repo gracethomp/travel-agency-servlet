@@ -31,7 +31,7 @@
         <fmt:message key="local.shopping" var="shopping"/>
         <fmt:message key="local.excursion" var="excursion"/>
         <fmt:message key="local.fitness" var="fitness"/>
-        <fmt:message key="local.vacantion" var="vacantion"/>
+        <fmt:message key="local.vacation" var="vacation"/>
     </fmt:bundle>
 </head>
 <body>
@@ -72,7 +72,7 @@
                         <p align="center" style="color: rgba(0,26,7,0.58); font-style: normal">
                             <a class="button" style="color: rgba(0,26,7,0.58);">${shopping}</a><a> | </a>
                             <a class="button" style="color: rgba(0,26,7,0.58);">${excursion}</a><a> | </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${vacantion}</a>
+                            <a class="button" style="color: rgba(0,26,7,0.58);">${vacation}</a>
                         </p>
                     </td>
                 </tr>

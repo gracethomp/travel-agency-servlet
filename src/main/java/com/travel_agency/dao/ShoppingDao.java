@@ -1,4 +1,6 @@
 package com.travel_agency.dao;
 
-public interface ShoppingDao extends TourDao {
+import com.travel_agency.entity.Shopping;
+
+public interface ShoppingDao<T extends Shopping> extends TourDao<Shopping> {
 }

@@ -16,6 +16,14 @@ public class Excursion extends Tour {
         this.attractions = attractions;
     }
 
+    public void setAttractions(String attractions) {
+        this.attractions = attractions;
+    }
+
+    public String getAttractions() {
+        return attractions;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)

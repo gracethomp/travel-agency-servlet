@@ -3,15 +3,15 @@ package com.travel_agency.entity;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Vacantion extends Tour {
+public class Vacation extends Tour {
     private Hotel hotel;
 
-    public Vacantion() {
+    public Vacation() {
     }
 
-    public Vacantion(int id, TourType type, double price, boolean isHot, Hotel hotel,
-                     City city, LocalDate dateFrom, LocalDate dateTo,
-                     Tour tour, TransportType transportType, int amountPerson){
+    public Vacation(int id, TourType type, double price, boolean isHot, Hotel hotel,
+                    City city, LocalDate dateFrom, LocalDate dateTo,
+                    Tour tour, TransportType transportType, int amountPerson){
         super(id, type, price, isHot, city, dateFrom, dateTo, tour, transportType, amountPerson);
         this.hotel = hotel;
     }
@@ -32,8 +32,8 @@ public class Vacantion extends Tour {
             return false;
         if (!super.equals(o))
             return false;
-        Vacantion vacantion = (Vacantion) o;
-        return Objects.equals(hotel, vacantion.hotel);
+        Vacation vacation = (Vacation) o;
+        return Objects.equals(hotel, vacation.hotel);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Vacantion extends Tour {
 
     @Override
     public String toString() {
-        return "Vacantion{" +
+        return "Vacation{" +
                 "hotel=" + hotel +
                 "} " + super.toString();
     }
