@@ -3,6 +3,7 @@ package com.travel_agency.controller;
 import com.travel_agency.controller.command.ChangeLocaleCommand;
 import com.travel_agency.controller.command.Command;
 import com.travel_agency.controller.command.Commands;
+import com.travel_agency.controller.command.ViewAllVauchers;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -50,6 +51,7 @@ public class Controller extends HttpServlet {
         private final Map<Commands, Command> commands = new HashMap<>();
         private CommandInitializer() {
             commands.put(Commands.CHANGE_LOCALE, new ChangeLocaleCommand());
+            commands.put(Commands.VIEW_ALL_VAUCHERS, new ViewAllVauchers());
         }
         public Command getCommand(String name){
             System.out.println(commands.get(Commands.CHANGE_LOCALE));

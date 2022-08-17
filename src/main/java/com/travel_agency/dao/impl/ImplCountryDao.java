@@ -5,6 +5,7 @@ import com.travel_agency.connection_pool.exception.ConnectionPoolException;
 import com.travel_agency.dao.CountryDao;
 import com.travel_agency.dao.exception.DAOException;
 import com.travel_agency.entity.Country;
+import com.travel_agency.entity.Tour;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -118,5 +119,10 @@ public class ImplCountryDao implements CountryDao {
             throw new DAOException(DAOException.SQL_FINDING_BY_ID, e);
         }
         return country;
+    }
+
+    @Override
+    public List<Tour> findAll() throws DAOException {
+        return null;
     }
 }

@@ -86,8 +86,8 @@ public class ImplVacationDao implements VacationDao<Vacation> {
     }
 
     @Override
-    public List<Vacation> findAll() throws DAOException {
-        List<Vacation> vacations = new ArrayList<>();
+    public List<Tour> findAll() throws DAOException {
+        List<Tour> vacations = new ArrayList<>();
         try(Connection connection = ConnectionPool.getInstance().getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TOUR_ALL);
             ResultSet resultSet = preparedStatement.executeQuery();

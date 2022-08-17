@@ -5,10 +5,12 @@ import com.travel_agency.connection_pool.exception.ConnectionPoolException;
 import com.travel_agency.dao.HotelDao;
 import com.travel_agency.dao.exception.DAOException;
 import com.travel_agency.entity.Hotel;
+import com.travel_agency.entity.Tour;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 public class ImplHotelDao implements HotelDao {
     private static final String INSERT = "INSERT INTO hotels (name, pricePerDay) VALUES (?, ?)";
@@ -72,6 +74,11 @@ public class ImplHotelDao implements HotelDao {
         } catch (SQLException e) {
             throw new DAOException(DAOException.SQL_FINDING_BY_ID + e, e);
         }
+        return null;
+    }
+
+    @Override
+    public List<Tour> findAll() throws DAOException {
         return null;
     }
 }

@@ -4,5 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum Commands {
-    CHANGE_LOCALE;
+    CHANGE_LOCALE,
+    VIEW_ALL_VAUCHERS;
 }

@@ -44,8 +44,13 @@ public class ConnectionPool {
     }
 
     public static ConnectionPool getInstance(){
-        if (instance==null)
-            instance = new ConnectionPool();
+        if (instance == null) {
+            synchronized (ConnectionPool.class) {
+                if (instance == null) {
+                    instance = new ConnectionPool();
+                }
+            }
+        }
         return instance;
     }
 
@@ -68,8 +73,7 @@ public class ConnectionPool {
     }
     public Connection getConnection() throws ConnectionPoolException {
         try {
-            ProxyConnection connection = availableConnections.take();
-            return connection;
+            return availableConnections.take();
         } catch (InterruptedException e) {
             throw new ConnectionPoolException(ConnectionPoolException.TAKE_INTERRUPTED_EXCEPTION_MESSAGE, e);
         }

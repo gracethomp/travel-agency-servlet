@@ -1,10 +1,39 @@
 package com.travel_agency.controller.command;
 
+import com.travel_agency.dao.DAOFactory;
+import com.travel_agency.dao.TourDao;
+import com.travel_agency.dao.exception.DAOException;
+import com.travel_agency.entity.Excursion;
+import com.travel_agency.entity.Shopping;
+import com.travel_agency.entity.Tour;
+import com.travel_agency.entity.Vacation;
+
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 public class ViewAllVauchers implements Command{
+    private DAOFactory daoFactory = DAOFactory.getInstance();
+    private TourDao<Excursion> excursionTourDao = daoFactory.getExcursionDao();
+    private TourDao<Vacation> vacationTourDao = daoFactory.getVacationDao();
+    private TourDao<Shopping> shoppingTourDao =daoFactory.getShoppingDao();
     @Override
     public String execute(HttpServletRequest request) {
-        return null;
+        String page = "";
+        try {
+            List<Tour> tours = excursionTourDao.findAll();
+            tours.addAll(vacationTourDao.findAll());
+            tours.addAll(shoppingTourDao.findAll());
+            if (!tours.isEmpty()) {
+                request.setAttribute("tours", tours);
+            } else {
+                request.setAttribute("error", "Tours not found");
+            }
+            page = "WEB-INF/jsp/view_all_tours.jsp";
+        } catch (DAOException e) {
+            e.printStackTrace();
+            page = "WEB-INF/jsp/error.jsp";
+        }
+
+        return page;
     }
 }

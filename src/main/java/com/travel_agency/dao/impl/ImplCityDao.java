@@ -6,6 +6,7 @@ import com.travel_agency.dao.CityDao;
 import com.travel_agency.dao.exception.DAOException;
 import com.travel_agency.entity.City;
 import com.travel_agency.entity.Country;
+import com.travel_agency.entity.Tour;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -121,5 +122,10 @@ public class ImplCityDao implements CityDao {
             throw new DAOException(DAOException.SQL_FINDING_BY_ID + e, e);
         }
         return city;
+    }
+
+    @Override
+    public List<Tour> findAll() throws DAOException {
+        return null;
     }
 }
