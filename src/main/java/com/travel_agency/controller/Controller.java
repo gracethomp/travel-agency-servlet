@@ -54,7 +54,6 @@ public class Controller extends HttpServlet {
             commands.put(Commands.VIEW_ALL_VAUCHERS, new ViewAllVauchers());
         }
         public Command getCommand(String name){
-            System.out.println(commands.get(Commands.CHANGE_LOCALE));
             return commands.get(Commands.valueOf(name.toUpperCase()));
         }
     }

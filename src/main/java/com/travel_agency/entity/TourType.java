@@ -1,18 +1,13 @@
 package com.travel_agency.entity;
 
-public enum TourType {
+public class TourType extends Entity{
+    private String title;
 
-    VACATIONS("vacations"),
-    TRIPS("trips"),
-    SHOPPING("shopping");
-
-    private String name;
-
-    TourType(String name){
-        this.name = name;
+    public String getTitle() {
+        return title;
     }
 
-    public String getName() {
-        return name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

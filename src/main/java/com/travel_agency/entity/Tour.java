@@ -3,32 +3,34 @@ package com.travel_agency.entity;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract class Tour extends Entity {
+public class Tour extends Entity {
     private TourType type;
     private double price;
-    private boolean isHot;
+    private boolean hot;
     private City city;
     private LocalDate dateFrom;
     private LocalDate dateTo;
     private Tour tour;
-    private TransportType transportType;
     private int amountPerson;
+    private String path;
+    private String description;
 
     public Tour() {
     }
 
-    public Tour(int id, TourType type, double price, boolean isHot, City city, LocalDate dateFrom, LocalDate dateTo,
-                Tour tour, TransportType transportType, int amountPerson) {
+    public Tour(int id, TourType type, double price, boolean hot, City city, LocalDate dateFrom, LocalDate dateTo,
+                Tour tour, int amountPerson, String path, String description) {
         super(id);
         this.type = type;
         this.price = price;
-        this.isHot = isHot;
+        this.hot = hot;
         this.city = city;
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
         this.tour = tour;
-        this.transportType = transportType;
         this.amountPerson = amountPerson;
+        this.path = path;
+        this.description = description;
     }
 
     public TourType getType() {
@@ -40,15 +42,11 @@ public abstract class Tour extends Entity {
     }
 
     public boolean isHot() {
-        return isHot;
+        return hot;
     }
 
     public Tour getTour() {
         return tour;
-    }
-
-    public TransportType getTransportType() {
-        return transportType;
     }
 
     public LocalDate getDateTo() {
@@ -66,8 +64,17 @@ public abstract class Tour extends Entity {
     public int getAmountPerson() {
         return amountPerson;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
     public void setHot(boolean hot) {
-        isHot = hot;
+        this.hot = hot;
     }
 
     public void setPrice(double price) {
@@ -90,11 +97,6 @@ public abstract class Tour extends Entity {
         this.dateFrom = dateFrom;
     }
 
-    public void setTransportType(TransportType transportType) {
-        this.transportType = transportType;
-    }
-
-
     public void setAmountPerson(int amountPerson) {
         this.amountPerson = amountPerson;
     }
@@ -103,22 +105,12 @@ public abstract class Tour extends Entity {
         this.city = city;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-        if (!super.equals(o))
-            return false;
-
-        Tour tour = (Tour) o;
-        return Double.compare(tour.price, price) == 0 && isHot == tour.isHot && Objects.equals(type, tour.type);
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), type, price, isHot);
+    public void setPath(String path) {
+        this.path = path;
     }
 
     @Override
@@ -126,7 +118,7 @@ public abstract class Tour extends Entity {
         return "Tour{" +
                 "type='" + type + '\'' +
                 ", price=" + price +
-                ", isHot=" + isHot +
+                ", isHot=" + hot +
                 '}';
     }
 }

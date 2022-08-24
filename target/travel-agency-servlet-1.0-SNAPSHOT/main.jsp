@@ -62,13 +62,6 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <p align="center" style="color: rgba(0,26,7,0.58); font-size: 16px; font-style: normal">
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${Greece}</a><a> | </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${Poland}</a><a> | </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${Spain}</a><a> | </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${Montenegro}</a><a> | </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${Bulgaria}</a>
-                        </p>
                         <p align="center" style="color: rgba(0,26,7,0.58); font-style: normal">
                             <a class="button" style="color: rgba(0,26,7,0.58);">${shopping}</a><a> | </a>
                             <a class="button" style="color: rgba(0,26,7,0.58);">${excursion}</a><a> | </a>

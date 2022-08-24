@@ -10,9 +10,9 @@ public class Shopping extends Tour {
     }
 
     public Shopping(int id, TourType type, double price, boolean isHot, String shops,
-                    City city, LocalDate dateFrom, LocalDate dateTo,
-                    Tour tour, TransportType transportType, int amountPerson){
-        super(id, type, price, isHot, city, dateFrom, dateTo, tour, transportType, amountPerson);
+                    City city, LocalDate dateFrom, LocalDate dateTo, Tour tour,
+                    int amountPerson, String path, String description){
+        super(id, type, price, isHot, city, dateFrom, dateTo, tour, amountPerson, path, description);
         this.shops = shops;
     }
 
@@ -22,23 +22,6 @@ public class Shopping extends Tour {
 
     public void setShops(String shops) {
         this.shops = shops;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-        if (!super.equals(o))
-            return false;
-        Shopping shopping = (Shopping) o;
-        return Objects.equals(shops, shopping.shops);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), shops);
     }
 
     @Override

@@ -10,9 +10,9 @@ public class Vacation extends Tour {
     }
 
     public Vacation(int id, TourType type, double price, boolean isHot, Hotel hotel,
-                    City city, LocalDate dateFrom, LocalDate dateTo,
-                    Tour tour, TransportType transportType, int amountPerson){
-        super(id, type, price, isHot, city, dateFrom, dateTo, tour, transportType, amountPerson);
+                    City city, LocalDate dateFrom, LocalDate dateTo, Tour tour,
+                    int amountPerson, String path, String description){
+        super(id, type, price, isHot, city, dateFrom, dateTo, tour, amountPerson, path, description);
         this.hotel = hotel;
     }
 
@@ -22,23 +22,6 @@ public class Vacation extends Tour {
 
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-        if (!super.equals(o))
-            return false;
-        Vacation vacation = (Vacation) o;
-        return Objects.equals(hotel, vacation.hotel);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), hotel);
     }
 
     @Override
