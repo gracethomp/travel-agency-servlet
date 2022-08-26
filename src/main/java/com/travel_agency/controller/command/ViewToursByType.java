@@ -29,8 +29,10 @@ public class ViewToursByType implements Command{
                 case ("3"): tours.addAll(shoppingTourDao.findAll()); break;
             }
             System.out.println(tours);
-            if (!tours.isEmpty())
+            if (!tours.isEmpty()) {
                 request.setAttribute("tours", tours);
+                request.setAttribute("tourType", type);
+            }
             else
                 request.setAttribute("error", "Tours not found");
             page = "WEB-INF/jsp/view_all_tours.jsp";

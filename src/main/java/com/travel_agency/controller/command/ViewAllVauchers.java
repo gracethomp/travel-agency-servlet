@@ -25,8 +25,10 @@ public class ViewAllVauchers implements Command{
             tours.addAll(vacationTourDao.findAll());
             tours.addAll(shoppingTourDao.findAll());
             System.out.println(tours);
-            if (!tours.isEmpty())
+            if (!tours.isEmpty()) {
                 request.setAttribute("tours", tours);
+                request.setAttribute("tourType", "all");
+            }
             else
                 request.setAttribute("error", "Tours not found");
             page = "WEB-INF/jsp/view_all_tours.jsp";

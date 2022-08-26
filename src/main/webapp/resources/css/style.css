@@ -119,4 +119,74 @@ td {
     padding-left: 25px;
     padding-right: 25px;
 }
+/*--------------------------sort----------------------*/
+ul {
+    list-style: none;
+    /* Делаю элементы блочными. */
+    display: block;
+    /* Убираю отступы. */
+    margin:0;
+    /* Убираю еще отступы! */
+    padding:0;
+}
+ul:after {
+    /* Делаю элементы блочными. */
+    display: block;
+    /* Убираю выравнивание. */
+    float: none;
+    content: ' ';
+    clear: both;
+}
+ul.mmenuu > li {
+    /* Задаю выравнивание и позиционирование. */
+    float: left;
+    /* Считаем координаты относительно исходного места*/
+    position: relative;
+}
+ul.mmenuu > li > a {
+    display: block;
+    /* Задаю белый цвет. */
+    color: #fff;
+    /* Задаю отступ 10px. */
+    padding: 10px;
+    /* Убираю форматирование*/
+    text-decoration: none;
+    /* Задаю цвет. */
+    background-color: rgba(5, 65, 15, 0.69);
+}
+ul.mmenuu > li > a:hover {
+    /* Задаю цвет при наведении. */
+    background-color: rgba(5, 65, 15, 0.18);
+}
+ul.ssubmenuu {
+    position: absolute;
+    width: 240px;
+    top: 37px;
+    left:0;
+    display: none;
+    /* Цвет — белый. */
+    background-color: white;
+}
+ul.ssubmenuu > li {
+    display: block;
+}
+ul.ssubmenuu > li > a {
+    display: block;
+    /* Убираю форматирование*/
+    text-decoration: none;
+    padding: 10px;
+    color: #3f3f3f;
+    /* Еще цвет. */
+    background-color: rgba(10, 112, 27, 0.24);
+}
+ul.ssubmenuu > li > a:hover {
+    /* Цвет бэкграунда при наведении. */
+    background-color: rgba(10, 112, 27, 0.08);
+    /* Задаю подчеркивание*/
+    text-decoration: underline;
+}
+ul.mmenuu > li:hover > ul.ssubmenuu {
+    /* Делаю элементы блочными. */
+    display: block;
+}
 

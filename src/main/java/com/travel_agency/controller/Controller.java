@@ -50,6 +50,7 @@ public class Controller extends HttpServlet {
             commands.put(Commands.CHANGE_LOCALE, new ChangeLocaleCommand());
             commands.put(Commands.VIEW_ALL_VAUCHERS, new ViewAllVauchers());
             commands.put(Commands.VIEW_TOURS_BY_TYPE, new ViewToursByType());
+            commands.put(Commands.ORDER_BY_PRICE, new OrderByPrice());
         }
         public Command getCommand(String name){
             return commands.get(Commands.valueOf(name.toUpperCase()));

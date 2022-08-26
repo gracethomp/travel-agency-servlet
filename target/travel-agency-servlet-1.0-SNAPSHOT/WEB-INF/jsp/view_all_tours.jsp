@@ -1,3 +1,6 @@
+<%@ page import="com.travel_agency.entity.Tour" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -49,16 +52,17 @@
                            style="color: rgba(0,26,7,0.58);">${ua}
                             <img src="resources/images/ukraine_icon_127856.png" alt="logo" style="height: 15px">
                         </a>
-                        <select>
-                            <option>${priceAsc}</option>
-                            <option>${priceDesc}</option>
-                            <option>${personAsc}</option>
-                            <option>${personDesc}</option>
-                            <option>${priceHotelAsc}</option>
-                            <option>${priceHotelDesc}</option>
-                        </select>
                     </p>
                 </div>
+                <a style="color: rgba(0,26,7,0.58);">Сортировка:</a>
+                <ul class="mmenuu">
+                    <li><a href=#>Меню №1</a>
+                        <ul class="ssubmenuu">
+                            <li><a href="Controller?command=order_by_price&sort=asc&type=<c:out value="${tourType}"/>">${priceAsc}</a></li>
+                            <li><a href="Controller?command=order_by_price&sort=desc&type=<c:out value="${tourType}"/>">${priceDesc}</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </td>
         </tr>
     </table>
