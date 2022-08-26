@@ -11,16 +11,18 @@ import java.util.List;
 
 public class ImplExcursionDao extends ImplTourDao <Excursion> implements ExcursionDao<Excursion> {
     private static final String INSERT = "INSERT INTO tours " +
-            "(id_type, price, isHot, dateFrom, dateTo, amountPerson, id_city, transport, attractions) " +
-            "VALUES (?,?,?,?,?,?,?,?,?);";
+            "(id_type, price, isHot, dateFrom, dateTo, amountPerson, id_city, transport, attractions, path, description) " +
+            "VALUES (?,?,?,?,?,?,?,?,?,?,?);";
     private static final String UPDATE = "UPDATE tours SET id_type=?, price=?, isHot=?, " +
-            "dateFrom=?, dateTo=?, amountPerson=?, id_city=?, transport=?, attractions=? WHERE id_tour=?;";
+            "dateFrom=?, dateTo=?, amountPerson=?, id_city=?, transport=?, attractions=?," +
+            " path=?, description=? WHERE id_tour=?;";
     private static final String DELETE = "DELETE FROM tours WHERE id_tour = ?;";
     private static final String SELECT_TOUR_BY_ID = "SELECT id_tour, id_type, price, isHot, dateFrom, dateTo," +
             "amountPerson, id_city, cities.name AS city_name, cities.id_country, countries.name AS country_name," +
             "transport, attractions FROM tours JOIN cities USING (id_city) " +
             "JOIN countries USING (id_country) WHERE id_tour = ?;";
-    private static final String SELECT_TOUR_ALL = "SELECT id_tour, id_type, tour_types.name AS tour_type, price, isHot, dateFrom, dateTo, amountPerson, " +
+    private static final String SELECT_TOUR_ALL = "SELECT id_tour, id_type, tour_types.name AS tour_type, " +
+            "price, isHot, dateFrom, dateTo, amountPerson, " +
             "id_city, cities.name AS city_name, cities.id_country, countries.name AS country_name, transport, " +
             "attractions, path, description FROM tours JOIN cities USING (id_city) JOIN countries USING (id_country)" +
             "JOIN tour_types USING (id_type) WHERE id_type = '2'";

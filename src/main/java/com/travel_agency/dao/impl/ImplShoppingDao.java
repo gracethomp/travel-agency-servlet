@@ -21,9 +21,10 @@ public class ImplShoppingDao implements ShoppingDao <Shopping> {
             "amountPerson, id_city, cities.name AS city_name, cities.id_country, countries.name AS country_name," +
             "transport, shops FROM tours JOIN cities USING (id_city) " +
             "JOIN countries USING (id_country) WHERE id_tour = ?;";
-    private static final String SELECT_TOUR_ALL = "SELECT id_tour, id_type, price, isHot, dateFrom, dateTo, amountPerson, " +
+    private static final String SELECT_TOUR_ALL = "SELECT id_tour, id_type, tour_types.name AS tour_type, price, isHot, dateFrom, dateTo, amountPerson, " +
             "id_city, cities.name AS city_name, cities.id_country, countries.name AS country_name, transport, " +
-            "shops FROM tours JOIN cities USING (id_city) JOIN countries USING (id_country) WHERE tours.id_type = 'shopping'";
+            "shops, path, description FROM tours JOIN cities USING (id_city) JOIN countries USING (id_country)" +
+            " JOIN tour_types USING (id_type) WHERE tours.id_type = '3'";
     private static final String SET_HOT = "UPDATE tours SET isHot = ? WHERE id_tour = ?;";
 
     @Override
@@ -89,10 +90,12 @@ public class ImplShoppingDao implements ShoppingDao <Shopping> {
         try(Connection connection = ConnectionPool.getInstance().getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TOUR_ALL);
             ResultSet resultSet = preparedStatement.executeQuery();
-            Shopping shopping = new Shopping();
-            setDataList(resultSet, shopping);
-            if(shopping.getId() != 0)
-                shoppings.add(shopping);
+            while (resultSet.next()) {
+                Shopping shopping = new Shopping();
+                setDataList(resultSet, shopping);
+                if (shopping.getId() != 0)
+                    shoppings.add(shopping);
+            }
         } catch (ConnectionPoolException e){
             throw new DAOException(e);
         } catch (SQLException e){
@@ -127,18 +130,22 @@ public class ImplShoppingDao implements ShoppingDao <Shopping> {
     }
 
     private void setDataList(ResultSet resultSet, Shopping shopping) throws SQLException {
-        while (resultSet.next() && !resultSet.wasNull()){
-            shopping.setId(resultSet.getInt("id_tour"));
-            shopping.setPrice(resultSet.getDouble("price"));
-            shopping.setHot(resultSet.getBoolean("isHot"));
-            shopping.setDateFrom(resultSet.getDate("dateFrom").toLocalDate());
-            shopping.setDateTo(resultSet.getDate("dateTo").toLocalDate());
-            shopping.setAmountPerson(resultSet.getInt("amountPerson"));
-            shopping.setCity(new City(resultSet.getInt("id_city"),
-                    resultSet.getString("city_name"),
-                    new Country(resultSet.getInt("id_country"),
-                            resultSet.getString("country_name"))));
-            shopping.setShops("shops");
-        }
+        shopping.setId(resultSet.getInt("id_tour"));
+        TourType tourType = new TourType();
+        tourType.setId(resultSet.getInt("id_type"));
+        tourType.setTitle(resultSet.getString("tour_type"));
+        shopping.setType(tourType);
+        shopping.setPrice(resultSet.getDouble("price"));
+        shopping.setHot(resultSet.getBoolean("isHot"));
+        shopping.setDateFrom(resultSet.getDate("dateFrom").toLocalDate());
+        shopping.setDateTo(resultSet.getDate("dateTo").toLocalDate());
+        shopping.setAmountPerson(resultSet.getInt("amountPerson"));
+        shopping.setCity(new City(resultSet.getInt("id_city"),
+                resultSet.getString("city_name"),
+                new Country(resultSet.getInt("id_country"),
+                        resultSet.getString("country_name"))));
+        shopping.setShops("shops");
+        shopping.setPath(resultSet.getString("path"));
+        shopping.setDescription(resultSet.getString("description"));
     }
 }

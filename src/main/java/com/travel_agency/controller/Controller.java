@@ -1,9 +1,6 @@
 package com.travel_agency.controller;
 
-import com.travel_agency.controller.command.ChangeLocaleCommand;
-import com.travel_agency.controller.command.Command;
-import com.travel_agency.controller.command.Commands;
-import com.travel_agency.controller.command.ViewAllVauchers;
+import com.travel_agency.controller.command.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -52,6 +49,7 @@ public class Controller extends HttpServlet {
         private CommandInitializer() {
             commands.put(Commands.CHANGE_LOCALE, new ChangeLocaleCommand());
             commands.put(Commands.VIEW_ALL_VAUCHERS, new ViewAllVauchers());
+            commands.put(Commands.VIEW_TOURS_BY_TYPE, new ViewToursByType());
         }
         public Command getCommand(String name){
             return commands.get(Commands.valueOf(name.toUpperCase()));

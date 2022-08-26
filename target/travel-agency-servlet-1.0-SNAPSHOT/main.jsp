@@ -63,9 +63,9 @@
                 <tr>
                     <td colspan="2">
                         <p align="center" style="color: rgba(0,26,7,0.58); font-style: normal">
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${shopping}</a><a> | </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${excursion}</a><a> | </a>
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${vacation}</a>
+                            <a href="Controller?command=view_tours_by_type&type=3" class="button" style="color: rgba(0,26,7,0.58);">${shopping}</a><a> | </a>
+                            <a href="Controller?command=view_tours_by_type&type=2" class="button" style="color: rgba(0,26,7,0.58);">${excursion}</a><a> | </a>
+                            <a href="Controller?command=view_tours_by_type&type=1" class="button" style="color: rgba(0,26,7,0.58);">${vacation}</a>
                         </p>
                     </td>
                 </tr>

@@ -25,6 +25,12 @@
         <fmt:message key="local.en" var="en"/>
         <fmt:message key="local.ua" var="ua"/>
         <fmt:message key="local.description" var="description"/>
+        <fmt:message key="local.priceAsc" var="priceAsc"/>
+        <fmt:message key="local.priceDesc" var="priceDesc"/>
+        <fmt:message key="local.personAsc" var="personAsc"/>
+        <fmt:message key="local.personDesc" var="personDesc"/>
+        <fmt:message key="local.priceHotelAsc" var="priceHotelAsc"/>
+        <fmt:message key="local.priceHotelDesc" var="priceHotelDesc"/>
     </fmt:bundle>
 </head>
 <body>
@@ -43,13 +49,21 @@
                            style="color: rgba(0,26,7,0.58);">${ua}
                             <img src="resources/images/ukraine_icon_127856.png" alt="logo" style="height: 15px">
                         </a>
+                        <select>
+                            <option>${priceAsc}</option>
+                            <option>${priceDesc}</option>
+                            <option>${personAsc}</option>
+                            <option>${personDesc}</option>
+                            <option>${priceHotelAsc}</option>
+                            <option>${priceHotelDesc}</option>
+                        </select>
                     </p>
                 </div>
             </td>
         </tr>
     </table>
 </div>
-<div align="center" style="margin-bottom: 150px">
+<div align="center" style="margin-bottom: 50px">
     <table border="1"  style="border: 3px ridge rgba(0,26,7,0.58)">
         <tr align="center" style="font-weight: bold; ">
             <td>№</td>

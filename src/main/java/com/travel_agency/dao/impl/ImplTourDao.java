@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+
 
 public class ImplTourDao<T extends Tour> implements TourDao<T> {
     private static final String SET_HOT = "UPDATE tours SET isHot = ? WHERE id_tour = ?;";
