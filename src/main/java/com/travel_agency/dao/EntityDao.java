@@ -11,5 +11,5 @@ public interface EntityDao <T extends Entity> {
     boolean update(T entity) throws DAOException;
     boolean delete(int id) throws DAOException;
     T findById(int id) throws DAOException;
-    List<Tour> findAll() throws DAOException;
+    List<T> findAll() throws DAOException;
 }

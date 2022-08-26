@@ -78,7 +78,7 @@ public class ImplHotelDao implements HotelDao {
     }
 
     @Override
-    public List<Tour> findAll() throws DAOException {
+    public List<Hotel> findAll() throws DAOException {
         return null;
     }
 }

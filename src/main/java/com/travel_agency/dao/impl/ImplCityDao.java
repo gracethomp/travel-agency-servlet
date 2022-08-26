@@ -125,7 +125,7 @@ public class ImplCityDao implements CityDao {
     }
 
     @Override
-    public List<Tour> findAll() throws DAOException {
+    public List<City> findAll() throws DAOException {
         return null;
     }
 }

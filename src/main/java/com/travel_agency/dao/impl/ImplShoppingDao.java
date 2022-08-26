@@ -85,8 +85,8 @@ public class ImplShoppingDao implements ShoppingDao <Shopping> {
     }
 
     @Override
-    public List<Tour> findAll() throws DAOException {
-        List<Tour> shoppings = new ArrayList<>();
+    public List<Shopping> findAll() throws DAOException {
+        List<Shopping> shoppings = new ArrayList<>();
         try(Connection connection = ConnectionPool.getInstance().getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TOUR_ALL);
             ResultSet resultSet = preparedStatement.executeQuery();

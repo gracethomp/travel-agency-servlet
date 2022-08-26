@@ -5,14 +5,18 @@ import java.util.Objects;
 public class Hotel extends Entity {
     private String name;
     private double pricePerDay;
+    private int type;
+    private City city;
 
     public Hotel() {
     }
 
-    public Hotel(int id, String name, double pricePerDay) {
+    public Hotel(int id, String name, double pricePerDay, int type, City city) {
         super(id);
         this.name = name;
         this.pricePerDay = pricePerDay;
+        this.type = type;
+        this.city = city;
     }
 
     public String getName() {
@@ -44,6 +48,22 @@ public class Hotel extends Entity {
 
         Hotel hotel = (Hotel) o;
         return Double.compare(hotel.pricePerDay, pricePerDay) == 0 && Objects.equals(name, hotel.name);
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     @Override

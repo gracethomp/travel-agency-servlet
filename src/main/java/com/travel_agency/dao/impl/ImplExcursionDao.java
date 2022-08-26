@@ -86,8 +86,8 @@ public class ImplExcursionDao extends ImplTourDao <Excursion> implements Excursi
     }
 
     @Override
-    public List<Tour> findAll() throws DAOException {
-        List<Tour> excursions = new ArrayList<>();
+    public List<Excursion> findAll() throws DAOException {
+        List<Excursion> excursions = new ArrayList<>();
         ConnectionPool connectionPool = ConnectionPool.getInstance();
         try(Connection connection = connectionPool.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TOUR_ALL);

@@ -1,6 +1,7 @@
 <%@ page import="com.travel_agency.entity.Tour" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.io.PrintWriter" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -32,8 +33,9 @@
         <fmt:message key="local.priceDesc" var="priceDesc"/>
         <fmt:message key="local.personAsc" var="personAsc"/>
         <fmt:message key="local.personDesc" var="personDesc"/>
-        <fmt:message key="local.priceHotelAsc" var="priceHotelAsc"/>
-        <fmt:message key="local.priceHotelDesc" var="priceHotelDesc"/>
+        <fmt:message key="local.hotelAsc" var="hotelAsc"/>
+        <fmt:message key="local.hotelDesc" var="hotelDesc"/>
+        <fmt:message key="local.sort" var="sort"/>
     </fmt:bundle>
 </head>
 <body>
@@ -54,12 +56,17 @@
                         </a>
                     </p>
                 </div>
-                <a style="color: rgba(0,26,7,0.58);">Сортировка:</a>
                 <ul class="mmenuu">
-                    <li><a href=#>Меню №1</a>
+                    <li><a href=#>${sort}</a>
                         <ul class="ssubmenuu">
                             <li><a href="Controller?command=order_by_price&sort=asc&type=<c:out value="${tourType}"/>">${priceAsc}</a></li>
                             <li><a href="Controller?command=order_by_price&sort=desc&type=<c:out value="${tourType}"/>">${priceDesc}</a></li>
+                            <li><a href="Controller?command=order_by_number_of_person&sort=asc&type=<c:out value="${tourType}"/>">${personAsc}</a></li>
+                            <li><a href="Controller?command=order_by_number_of_person&sort=desc&type=<c:out value="${tourType}"/>">${personDesc}</a></li>
+                            <c:if test="${tourType == '1'}">
+                                <li><a href="Controller?command=order_by_hotel&sort=asc&type=1">${hotelAsc}</a></li>
+                                <li><a href="Controller?command=order_by_hotel&sort=desc&type=1">${hotelDesc}</a></li>
+                            </c:if>
                         </ul>
                     </li>
                 </ul>
@@ -89,7 +96,7 @@
                 <td><c:out value="${tour.type.title}"/></td>
                 <td><c:out value="${tour.price}"/> UAN</td>
                 <td><c:out value="${tour.hot}"/></td>
-                <td style="width: 300px"><c:out value="${tour.description}"/></td>
+                <td style="width: 300px"><c:out value="${tour.description}"/><br>Amount person:<c:out value="${tour.amountPerson}"/></td>
                 <td style="height: 200px; width: 30%; margin: 0; min-width: 200px;">
                     <img style="width: 100%; margin: 0;" alt="" src=<c:out value="${tour.path}"/>>
                 </td>

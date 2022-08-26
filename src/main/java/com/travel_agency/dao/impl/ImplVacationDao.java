@@ -20,12 +20,12 @@ public class ImplVacationDao implements VacationDao<Vacation> {
     private static final String DELETE = "DELETE FROM tours WHERE id_tour = ?;";
     private static final String SELECT_TOUR_BY_ID = "SELECT id_tour, id_type, tour_types.name AS tour_type, price, isHot, dateFrom, dateTo," +
             "amountPerson, tours.id_city, cities.name AS city_name, cities.id_country, countries.name AS country_name," +
-            "transport, id_hotel, hotels.name AS hotel_name, hotels.pricePerDay, path, description FROM tours JOIN hotels " +
+            "transport, id_hotel, hotels.name AS hotel_name, hotels.pricePerDay, hotels.type, path, description FROM tours JOIN hotels " +
             "USING (id_hotel) JOIN cities USING (id_city) JOIN countries USING (id_country) JOIN tour_types " +
             "USING (id_type) WHERE id_tour = ?;";
     private static final String SELECT_TOUR_ALL = "SELECT id_tour, id_type, tour_types.name AS tour_type, price, isHot, dateFrom, dateTo, " +
             "amountPerson, tours.id_city AS tourcity, cities.name AS city_name, cities.id_country, countries.name AS country_name," +
-            "transport, id_hotel, hotels.name AS hotel_name, hotels.pricePerDay, path, description FROM tours JOIN cities " +
+            "transport, id_hotel, hotels.name AS hotel_name, hotels.pricePerDay, hotels.type AS hotel_type, path, description FROM tours JOIN cities " +
             "USING (id_city) JOIN hotels USING (id_hotel) JOIN countries USING (id_country) JOIN tour_types USING (id_type)" +
             "WHERE id_type = '1'";
     private static final String SET_HOT = "UPDATE tours SET isHot = ? WHERE id_tour = ?;";
@@ -89,8 +89,8 @@ public class ImplVacationDao implements VacationDao<Vacation> {
     }
 
     @Override
-    public List<Tour> findAll() throws DAOException {
-        List<Tour> vacations = new ArrayList<>();
+    public List<Vacation> findAll() throws DAOException {
+        List<Vacation> vacations = new ArrayList<>();
         try(Connection connection = ConnectionPool.getInstance().getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TOUR_ALL);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -144,12 +144,14 @@ public class ImplVacationDao implements VacationDao<Vacation> {
         vacation.setDateFrom(resultSet.getDate("dateFrom").toLocalDate());
         vacation.setDateTo(resultSet.getDate("dateTo").toLocalDate());
         vacation.setAmountPerson(resultSet.getInt("amountPerson"));
-        vacation.setCity(new City(resultSet.getInt("tourcity"),
+        City city = new City(resultSet.getInt("tourcity"),
                 resultSet.getString("city_name"),
                 new Country(resultSet.getInt("id_country"),
-                        resultSet.getString("country_name"))));
+                        resultSet.getString("country_name")));
+        vacation.setCity(city);
         vacation.setHotel(new Hotel(resultSet.getInt("id_hotel"),
-                resultSet.getString("hotel_name"), resultSet.getDouble("pricePerDay")));
+                resultSet.getString("hotel_name"), resultSet.getDouble("pricePerDay"),
+                resultSet.getInt("hotel_type"), city));
         vacation.setPath(resultSet.getString("path"));
         vacation.setDescription(resultSet.getString("description"));
     }

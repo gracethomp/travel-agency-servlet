@@ -41,9 +41,8 @@ public class ImplTourDao<T extends Tour> implements TourDao<T> {
     }
 
     @Override
-    public List<Tour> findAll() throws DAOException {
-        List<Tour> tours = new ArrayList<>();
-        return tours;
+    public List<T> findAll() throws DAOException {
+        return new ArrayList<>();
     }
 
     @Override

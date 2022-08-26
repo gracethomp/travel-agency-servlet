@@ -122,7 +122,7 @@ public class ImplCountryDao implements CountryDao {
     }
 
     @Override
-    public List<Tour> findAll() throws DAOException {
+    public List<Country> findAll() throws DAOException {
         return null;
     }
 }
