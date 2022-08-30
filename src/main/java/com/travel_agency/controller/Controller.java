@@ -53,6 +53,9 @@ public class Controller extends HttpServlet {
             commands.put(Commands.ORDER_BY_PRICE, new OrderByPrice());
             commands.put(Commands.ORDER_BY_NUMBER_OF_PERSON, new OrderByNumberOfPerson());
             commands.put(Commands.ORDER_BY_HOTEL, new OrderByHotel());
+            commands.put(Commands.REGISTER_PAGE, new RegisterPageCommand());
+            commands.put(Commands.SIGN_IN_PAGE, new SignInPageCommand());
+            commands.put(Commands.REGISTER, new RegisterUserCommand());
         }
         public Command getCommand(String name){
             return commands.get(Commands.valueOf(name.toUpperCase()));

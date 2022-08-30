@@ -3,9 +3,6 @@ package com.travel_agency.controller.command;
 import com.travel_agency.dao.DAOFactory;
 import com.travel_agency.dao.TourDao;
 import com.travel_agency.dao.exception.DAOException;
-import com.travel_agency.entity.Excursion;
-import com.travel_agency.entity.Shopping;
-import com.travel_agency.entity.Tour;
 import com.travel_agency.entity.Vacation;
 
 import javax.servlet.http.HttpServletRequest;

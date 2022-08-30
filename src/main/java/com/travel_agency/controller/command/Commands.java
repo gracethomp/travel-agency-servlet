@@ -9,5 +9,8 @@ public enum Commands {
     VIEW_TOURS_BY_TYPE,
     ORDER_BY_PRICE,
     ORDER_BY_NUMBER_OF_PERSON,
-    ORDER_BY_HOTEL
+    ORDER_BY_HOTEL,
+    REGISTER_PAGE,
+    SIGN_IN_PAGE,
+    REGISTER
 }

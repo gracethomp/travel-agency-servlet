@@ -1,7 +1,3 @@
-<%@ page import="com.travel_agency.entity.Tour" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.io.PrintWriter" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -47,12 +43,12 @@
                     <p style="font-weight: bold">
                         <a href="Controller?command=change_locale&localization=en"
                            style="color: rgba(0,26,7,0.58);">${en}
-                            <img src="resources/images/united_kingdom_icon_127821.png"
+                            <img src="${pageContext.request.contextPath}/resources/images/united_kingdom_icon_127821.png"
                                  alt="logo" style="height: 15px">
                         </a>
                         <a href="Controller?command=change_locale&localization=ua"
                            style="color: rgba(0,26,7,0.58);">${ua}
-                            <img src="resources/images/ukraine_icon_127856.png" alt="logo" style="height: 15px">
+                            <img src="${pageContext.request.contextPath}/resources/images/ukraine_icon_127856.png" alt="logo" style="height: 15px">
                         </a>
                     </p>
                 </div>

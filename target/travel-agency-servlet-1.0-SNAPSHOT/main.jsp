@@ -77,7 +77,7 @@
                     <td>
                         <p align="center" style="color: rgba(0,26,7,0.58); font-weight: bold;
                         font-size: 18px; margin: 10px">
-                            <a class="button" style="color: rgba(0,26,7,0.58);">${loginMessage}
+                            <a href="Controller?command=register_page" class="button" style="color: rgba(0,26,7,0.58);">${loginMessage}
                                 <img src="${pageContext.request.contextPath}/resources/images/1177568.png"
                                      alt = "logotype" style="height: 20px;">
                             </a>

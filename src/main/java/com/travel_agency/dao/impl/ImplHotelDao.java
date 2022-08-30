@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ImplHotelDao implements HotelDao {
-    private static final String INSERT = "INSERT INTO hotels (name, pricePerDay) VALUES (?, ?)";
+    private static final String INSERT = "INSERT INTO hotels (name, pricePerDay, type, id_city) VALUES (?, ?, ?, ?)";
     private static final String UPDATE = "UPDATE hotels SET name = ?, pricePerDay = ? WHERE id_hotel = ?";
     private static final String DELETE = "DELETE FROM hotels WHERE id_hotel = ?";
     /*private static final String SELECT_HOTEL_BY_ID = "SELECT id_hotel, hotels.name AS hotel_name, pricePerDay, " +

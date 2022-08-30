@@ -26,6 +26,12 @@
         <div class="welcom">
             <h3>${welcom}</h3>
         </div>
+        <div style="position: absolute; right: 350px; top: 35px;">
+            <a href="Controller?command=register_page" style="color: white;">Личный кабинет
+                <img src="${pageContext.request.contextPath}/resources/images/1177568.png"
+                     alt = "logotype" style="height: 20px;">
+            </a>
+        </div>
         <div>
             <ul id="contact-info" class="contact-info">
                 <li>${contact}</li>
